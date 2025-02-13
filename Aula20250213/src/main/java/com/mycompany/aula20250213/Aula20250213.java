@@ -33,16 +33,33 @@ public class Aula20250213 {
 }
 
 class Operadores {
+    Scanner scan = new Scanner(System.in);
     public int adicao() {
-        return 1;
+        System.out.print("Primeiro número: ");
+        int primeiro = scan.nextInt();
+        System.out.print("Segundo: ");
+        int segundo = scan.nextInt();
+        return primeiro + segundo;
     }
     public int subtracao() {
-        return 2;
+        System.out.print("Primeiro número: ");
+        int primeiro = scan.nextInt();
+        System.out.print("Segundo: ");
+        int segundo = scan.nextInt();
+        return primeiro - segundo;
     }
     public int multiplicacao() {
-        return 3;
+        System.out.print("Primeiro número: ");
+        int primeiro = scan.nextInt();
+        System.out.print("Segundo: ");
+        int segundo = scan.nextInt();
+        return primeiro * segundo;
     }
     public int divisao() {
-        return 4;
+        System.out.print("Primeiro número: ");
+        int primeiro = scan.nextInt();
+        System.out.print("Segundo: ");
+        int segundo = scan.nextInt();
+        return primeiro / segundo;
     }
 }
