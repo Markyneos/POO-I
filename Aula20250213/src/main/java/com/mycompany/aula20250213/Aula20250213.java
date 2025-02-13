@@ -23,9 +23,11 @@ public class Aula20250213 {
                 case 4:
                     System.out.println("Resposta: " + operacao.divisao());
                     break;
-                default:
+                case 0:
                     System.out.println("Saindo");
                     break;
+                default:
+                    System.err.println("Erro: Tente um dos números selecionados");
             }
         }
         scanner.close();
