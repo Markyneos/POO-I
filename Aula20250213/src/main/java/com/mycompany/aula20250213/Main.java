@@ -3,7 +3,7 @@ package com.mycompany.aula20250213;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ArithmeticException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("CALCULADORA");
         int input = 1;
@@ -13,16 +13,20 @@ public class Main {
             Operadores operacao = new Operadores();
             switch (input) {
                 case 1:
-                    System.out.println("Resposta: " + operacao.adicao());
+                    System.out.println("Resposta: " + operacao.adicao() + "\n");
                     break;
                 case 2:
-                    System.out.println("Resposta: " + operacao.subtracao());
+                    System.out.println("Resposta: " + operacao.subtracao() + "\n");
                     break;
                 case 3:
-                    System.out.println("Resposta: " + operacao.multiplicacao());
+                    System.out.println("Resposta: " + operacao.multiplicacao() + "\n");
                     break;
                 case 4:
-                    System.out.println("Resposta: " + operacao.divisao());
+                    try {
+                        System.out.println("Resposta: " + operacao.divisao() + "\n");
+                    } catch (ArithmeticException e) {
+                        System.err.println("Erro: não é possível dividir por 0");
+                    }
                     break;
                 case 0:
                     System.out.println("Saindo");
