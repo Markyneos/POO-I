@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws ArithmeticException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("CALCULADORA");
         int input = 1;
         while (input != 0) {
+            System.out.println("CALCULADORA");
             System.out.print("1 - Adição\n2 - Subtração\n3 - Multiplicação\n4 - Divisão\n0 - Sair\nEscolha: ");
             input = scanner.nextInt();
             Operadores operacao = new Operadores();
