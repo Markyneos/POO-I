@@ -1,7 +1,8 @@
 package com.mycompany.aula20250213;
+
 import java.util.Scanner;
 
-public class Aula20250213 {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("CALCULADORA");
@@ -36,6 +37,7 @@ public class Aula20250213 {
 
 class Operadores {
     Scanner scan = new Scanner(System.in);
+
     public int adicao() {
         System.out.print("Primeiro número: ");
         int primeiro = scan.nextInt();
@@ -43,6 +45,7 @@ class Operadores {
         int segundo = scan.nextInt();
         return primeiro + segundo;
     }
+
     public int subtracao() {
         System.out.print("Primeiro número: ");
         int primeiro = scan.nextInt();
@@ -50,6 +53,7 @@ class Operadores {
         int segundo = scan.nextInt();
         return primeiro - segundo;
     }
+
     public int multiplicacao() {
         System.out.print("Primeiro número: ");
         int primeiro = scan.nextInt();
@@ -57,6 +61,7 @@ class Operadores {
         int segundo = scan.nextInt();
         return primeiro * segundo;
     }
+
     public int divisao() {
         System.out.print("Primeiro número: ");
         int primeiro = scan.nextInt();
