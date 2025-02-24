@@ -3,9 +3,8 @@ package com.mycompany.aula20250213;
 import java.util.Scanner;
 
 public class Main {
-    static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) throws ArithmeticException {
+        Scanner scanner = new Scanner(System.in);
         int input = 1;
         while (input != 0) {
             System.out.println("CALCULADORA");
@@ -13,17 +12,17 @@ public class Main {
             input = scanner.nextInt();
             switch (input) {
                 case 1:
-                    System.out.println("Resposta: " + adicao() + "\n");
+                    System.out.println("Resposta: " + adicao(scanner) + "\n");
                     break;
                 case 2:
-                    System.out.println("Resposta: " + subtracao() + "\n");
+                    System.out.println("Resposta: " + subtracao(scanner) + "\n");
                     break;
                 case 3:
-                    System.out.println("Resposta: " + multiplicacao() + "\n");
+                    System.out.println("Resposta: " + multiplicacao(scanner) + "\n");
                     break;
                 case 4:
                     try {
-                        System.out.println("Resposta: " + divisao() + "\n");
+                        System.out.println("Resposta: " + divisao(scanner) + "\n");
                     } catch (ArithmeticException e) {
                         System.err.println("Erro: não é possível dividir por 0\n");
                     }
@@ -38,35 +37,35 @@ public class Main {
         scanner.close();
     }
 
-    public static int adicao() {
+    public static int adicao(Scanner s) {
         System.out.print("Primeiro número: ");
-        int primeiro = scanner.nextInt();
+        int primeiro = s.nextInt();
         System.out.print("Segundo: ");
-        int segundo = scanner.nextInt();
+        int segundo = s.nextInt();
         return primeiro + segundo;
     }
 
-    public static int subtracao() {
+    public static int subtracao(Scanner s) {
         System.out.print("Primeiro número: ");
-        int primeiro = scanner.nextInt();
+        int primeiro = s.nextInt();
         System.out.print("Segundo: ");
-        int segundo = scanner.nextInt();
+        int segundo = s.nextInt();
         return primeiro - segundo;
     }
 
-    public static int multiplicacao() {
+    public static int multiplicacao(Scanner s) {
         System.out.print("Primeiro número: ");
-        int primeiro = scanner.nextInt();
+        int primeiro = s.nextInt();
         System.out.print("Segundo: ");
-        int segundo = scanner.nextInt();
+        int segundo = s.nextInt();
         return primeiro * segundo;
     }
 
-    public static int divisao() {
+    public static int divisao(Scanner s) {
         System.out.print("Primeiro número: ");
-        int primeiro = scanner.nextInt();
+        int primeiro = s.nextInt();
         System.out.print("Segundo: ");
-        int segundo = scanner.nextInt();
+        int segundo = s.nextInt();
         return primeiro / segundo;
     }
 }
