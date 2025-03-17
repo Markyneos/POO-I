@@ -2,9 +2,12 @@ import java.time.Year;
 import java.util.Random;
 
 public class Aluno {
+	// Instância da classe Random para utilizar a geração de números aleatória
 	Random rand = new Random();
-	private String matricula = "" + Year.now().getValue() + rand.nextInt(10) + rand.nextInt(10) + rand.nextInt(10)
-			+ rand.nextInt(10);
+	// Criação da matrícula com os padrões de ano como primeiro número e 4 números
+	// aleatórios
+	private String matricula = Year.now().getValue() + String.format("%04d", rand.nextInt(10000));
+	// Inicialização dos atributos
 	private String nome = "";
 	private String curso = "";
 	private String turma = "";
@@ -12,8 +15,10 @@ public class Aluno {
 	private double nota1b = 0.0;
 	private double nota2b = 0.0;
 	private double notaf = (nota1b + nota2b) / 2;
+	// Quantidade de alunos(instâncias) da classe inicializados
 	public static int qtdAlunos = 0;
 
+	// Métodos construtores com possíveis casos de uso
 	public Aluno(String nome, String curso, String turma, int periodo) {
 		this.nome = nome.toUpperCase();
 		this.curso = curso;
@@ -33,6 +38,10 @@ public class Aluno {
 		this.nome = nome;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("Aluno: %s\nMatrícula: %s\nCurso: %s\nTurma: %s\nPeríodo: %d\nNota 1: %.2f\nNota 2: %.2f\nNota final: %.2f", nome, matricula, curso, turma, periodo, nota1b, nota2b, notaf);
+	}
 	public void imprimir() {
 		System.out.printf("Matrícula: %s\nNome: %s\nCurso: %s\nTurma: %s\n", matricula, nome, curso, turma);
 	}
@@ -81,14 +90,25 @@ public class Aluno {
 		return nota2b;
 	}
 
-	public void passar(String novaTurma) {
-		periodo++;
-		turma = novaTurma;
+	public boolean passar(String novaTurma) {
+		if (notaf >= 7) {
+			periodo++;
+			turma = novaTurma;
+			return true;
+		} else {
+			return false;
+		}
 	}
 
-	public void passarDif(int novoPeriodo, String novaTurma) {
-		turma = novaTurma;
-		periodo = novoPeriodo;
+	public boolean passarDif(int novoPeriodo, String novaTurma) {
+		if (notaf >= 7) {
+			turma = novaTurma;
+			periodo = novoPeriodo;
+			return true;
+		} else {
+			System.out.println("Aluno reprovado");
+			return false;
+		}
 	}
 
 	public double mediaFinal() {
