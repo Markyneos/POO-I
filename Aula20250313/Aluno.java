@@ -1,8 +1,10 @@
+import java.time.Year;
 import java.util.Random;
 
 public class Aluno {
 	Random rand = new Random();
-	private String matricula = "2025" + rand.nextInt(10) + rand.nextInt(10) + rand.nextInt(10) + rand.nextInt(10);
+	private String matricula = "" + Year.now().getValue() + rand.nextInt(10) + rand.nextInt(10) + rand.nextInt(10)
+			+ rand.nextInt(10);
 	private String nome = "";
 	private String curso = "";
 	private String turma = "";
