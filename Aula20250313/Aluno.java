@@ -40,8 +40,11 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return String.format("Aluno: %s\nMatrícula: %s\nCurso: %s\nTurma: %s\nPeríodo: %d\nNota 1: %.2f\nNota 2: %.2f\nNota final: %.2f", nome, matricula, curso, turma, periodo, nota1b, nota2b, notaf);
+		return String.format(
+				"Aluno: %s\nMatrícula: %s\nCurso: %s\nTurma: %s\nPeríodo: %d\nNota 1: %.2f\nNota 2: %.2f\nNota final: %.2f",
+				nome, matricula, curso, turma, periodo, nota1b, nota2b, notaf);
 	}
+
 	public void imprimir() {
 		System.out.printf("Matrícula: %s\nNome: %s\nCurso: %s\nTurma: %s\n", matricula, nome, curso, turma);
 	}
