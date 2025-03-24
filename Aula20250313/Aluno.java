@@ -2,12 +2,8 @@ import java.time.Year;
 import java.util.Random;
 
 public class Aluno {
-	// Instância da classe Random para utilizar a geração de números aleatória
 	Random rand = new Random();
-	// Criação da matrícula com os padrões de ano como primeiro número e 4 números
-	// aleatórios
 	private String matricula = Year.now().getValue() + String.format("%04d", rand.nextInt(10000));
-	// Inicialização dos atributos
 	private String nome = "";
 	private String curso = "";
 	private String turma = "";
@@ -15,10 +11,8 @@ public class Aluno {
 	private double nota1b = 0.0;
 	private double nota2b = 0.0;
 	private double notaf = (nota1b + nota2b) / 2;
-	// Quantidade de alunos(instâncias) da classe inicializados
 	public static int qtdAlunos = 0;
 
-	// Métodos construtores com possíveis casos de uso
 	public Aluno(String nome, String curso, String turma, int periodo) {
 		this.nome = nome.toUpperCase();
 		this.curso = curso;
@@ -36,6 +30,7 @@ public class Aluno {
 
 	public Aluno(String nome) {
 		this.nome = nome;
+		qtdAlunos++;
 	}
 
 	@Override
