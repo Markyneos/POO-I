@@ -1,4 +1,4 @@
-public class Livro {
+public class Livro2 {
     private static int numeroLivros = 0;
     private String nome;
     private int anoPublicacao;
