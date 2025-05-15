@@ -1,6 +1,12 @@
-public class ContaCorrente extends Conta {
+public class ContaCorrente extends Conta implements Pix {
     public ContaCorrente(double saldoInicial) {
         super(saldoInicial);
+    }
+
+    public double fazerPix(double quantidade) {
+        saldo -= quantidade;
+        System.out.printf("Pix de %.2f realizado\n", quantidade);
+        return saldo;
     }
 
     public void sacar(double valor) {
