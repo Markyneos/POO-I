@@ -1,0 +1,46 @@
+Exercício: Loja de Instrumentos
+
+Você foi contratado para construir um sistema para uma loja de Instrumentos Musicais. Para isso, é necessário que você crie 
+classes para os instrumentos Baixo, Baixo Acústico, Bateria, Cajón, Guitarra, Pandeiro, Piano, Ukulele, Violão e Violino, e
+para o usuário. Você deve implementar conceitos abstratos para modularizar e separar as classes, como por exemplo, instrumentos
+de corda, instrumentos acústicos, instrumentos de percussão, etc. (Note-se que os instrumentos podem fazer parte de mais de um
+desses). Todos os instrumentos cadastrados possuem um Identificador, que é criado automaticamente ao instanciá-lo, o nome do
+modelo e um preço, como atributos privados, e um método para exibir essas informações. Todos os instrumentos devem ter pelo 
+menos um método para interagir com eles, de acordo com o tipo de instrumento. O usuário deve poder cadastrar informações como 
+seu nome, CPF e telefone, caso desejar, e também colocar os instrumentos em um carrinho, no qual ele pagará no final do 
+programa, podendo imprimir as informações desse carrinho, e remover instrumentos também.
+
+MAIN
+public class Main {
+        public static void main(String[] args) {
+                Usuario u1 = new Usuario("Marco");
+                u1.adicionarInstrumento(new Guitarra("Les Paul", 2300));
+                u1.adicionarInstrumento(new Baixo("Tagima", 5400));
+                u1.imprimirCarrinho();
+                u1.removerInstrumento(1);
+                BaixoAcustico ba1 = new BaixoAcustico("Tagima", 3200);
+                ba1.afinar("Padrão");
+                Bateria bat1 = new Bateria("Yamaha", 7800);
+                bat1.tocar();
+                Cajon c1 = new Cajon("Mapex", 2150);
+                c1.tocarAcustico();
+                Guitarra g1 = new Guitarra("Fender", 8790);
+                g1.afinar("Drop C");
+                g1.tocarAcorde("E");
+                Pandeiro p1 = new Pandeiro("Carnaval", 850);
+                p1.tocar();
+                Piano pi1 = new Piano("Yamaha", 10340);
+                pi1.tocarAcorde("G");
+                Ukulele uk1 = new Ukulele("Tagima", 1500);
+                uk1.tocarAcorde("B");
+                Violao v1 = new Violao("Eagle", 5400);
+                v1.afinar("Padrão");
+                v1.tocarCorda(3);
+                Violino vi1 = new Violino("Yamaha", 3200);
+                vi1.tocarCorda(4);
+                u1.adicionarInstrumento(ba1);
+                u1.adicionarInstrumento(v1);
+                u1.imprimirCarrinho();
+                u1.pagarCarrinho(100000);
+        }
+}

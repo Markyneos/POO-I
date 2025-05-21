@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Usuario {
+public class Usuario1 {
 	private String nome;
 	private ArrayList<MeioPagamento> listaMeios = new ArrayList<MeioPagamento>();
 
